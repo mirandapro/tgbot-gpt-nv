@@ -19,16 +19,16 @@ roles = {
     }
 
    async chat(messages) {
-    try {
-        const response = await this.openai.chat.completions.create({
-            model: 'gpt-3.5-turbo',
-            messages: messages,
-        })
-//      console.log(response)
-        return response.choices[0].message
-    } catch(e) {
-        console.log('Error while gpt chat', e.message)
-    }
+        try {
+            const response = await this.openai.chat.completions.create({
+                model: 'gpt-3.5-turbo',
+                messages: messages,
+            })
+    //      console.log(response)
+            return response.choices[0].message
+        } catch(e) {
+            console.log('Error while gpt chat', e.message)
+        }
 
     }
 
